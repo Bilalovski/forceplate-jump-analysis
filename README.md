@@ -83,14 +83,6 @@ docs/plot.py   regenerates the force-time figure (synthetic, illustrative)
 tests/         synthetic jumps with known heights; both methods must recover them
 ```
 
-## Provenance
-
-A rewrite of an earlier MATLAB App Designer GUI (`DSPMatlab`) into a tested,
-reviewable Python library. The MATLAB version computed jump height by the
-impulse method inside a binary `.mlapp`; this adds the independent flight-time
-cross-check, bilateral asymmetry, the calibration-free derivation, and a test
-suite.
-
 ## Scope and limits
 
 - **Countermovement / squat jumps** (vertical). A standing long jump is

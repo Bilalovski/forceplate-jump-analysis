@@ -1,0 +1,38 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "forceplate"
+version = "0.1.0"
+description = "Vertical-jump metrics from force-plate recordings, with two cross-validating height methods"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = [
+    "numpy>=1.24",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8",
+    "ruff>=0.6",
+    "matplotlib>=3.7",   # only for docs/plot.py
+]
+
+[project.scripts]
+forceplate = "forceplate.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/forceplate"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
